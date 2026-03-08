@@ -142,7 +142,7 @@ const CustomTooltip = ({ active, payload, label }) => {
       background:"#fff", border:"1px solid #e2e8f0", borderRadius:10,
       padding:"10px 14px", minWidth:160, boxShadow:"0 8px 24px rgba(0,0,0,0.12)"
     }}>
-      <p style={{ color:"#94a3b8", fontSize:10, margin:"0 0 8px", letterSpacing:1 }}>{label}</p>
+      <p style={{ color:"#475569", fontSize:10, margin:"0 0 8px", letterSpacing:1 }}>{label}</p>
       {sorted.map(p => {
         const pct = (p.value - 100).toFixed(1);
         return (
@@ -191,7 +191,7 @@ function SetupScreen({ onSubmit }) {
         <h2 style={{ margin:"0 0 6px", fontSize:20, color:"#0f172a", fontWeight:700 }}>
           Alpha Vantage API Key
         </h2>
-        <p style={{ fontSize:11, color:"#64748b", lineHeight:1.7, margin:"0 0 24px" }}>
+        <p style={{ fontSize:11, color:"#334155", lineHeight:1.7, margin:"0 0 24px" }}>
           Free account · No credit card · Takes 60 seconds to sign up.
         </p>
 
@@ -238,12 +238,12 @@ function SetupScreen({ onSubmit }) {
           style={{
             width:"100%", padding:"11px 0", borderRadius:8,
             background: key.trim() ? "#2563eb" : "#e2e8f0",
-            color: key.trim() ? "#fff" : "#94a3b8",
+            color: key.trim() ? "#fff" : "#475569",
             border:"none", cursor: key.trim() ? "pointer" : "default",
             fontFamily:"inherit", fontSize:12, fontWeight:700, letterSpacing:1,
           }}
         >LOAD DASHBOARD →</button>
-        <p style={{ fontSize:9, color:"#cbd5e1", marginTop:12, lineHeight:1.7 }}>
+        <p style={{ fontSize:9, color:"#334155", marginTop:12, lineHeight:1.7 }}>
           Your key is only sent to Alpha Vantage and is never stored anywhere.
         </p>
       </div>
@@ -373,13 +373,13 @@ export default function App() {
       }}>
         <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-end", flexWrap:"wrap", gap:12 }}>
           <div>
-            <div style={{ fontSize:9, letterSpacing:4, color:"#2563eb", textTransform:"uppercase", marginBottom:4 }}>
+            <div style={{ fontSize:9, letterSpacing:4, color:"#000000", textTransform:"uppercase", marginBottom:4 }}>
               AI Infrastructure · Picks &amp; Shovels
             </div>
             <h1 style={{ margin:0, fontSize:22, fontWeight:700, color:"#0f172a" }}>
               ETF Performance Tracker
             </h1>
-            <p style={{ margin:"3px 0 0", fontSize:10, color:"#94a3b8", letterSpacing:1 }}>
+            <p style={{ margin:"3px 0 0", fontSize:10, color:"#475569", letterSpacing:1 }}>
               {isLoading
                 ? <span style={{ color:"#2563eb" }}>
                     LOADING {currentSymbol}…{countdown > 0 && ` (next in ${countdown}s)`}
@@ -420,7 +420,7 @@ export default function App() {
                 borderRadius:2, transition:"width 0.4s ease"
               }}/>
             </div>
-            <div style={{ fontSize:9, color:"#94a3b8", marginTop:4, letterSpacing:1 }}>
+            <div style={{ fontSize:9, color:"#475569", marginTop:4, letterSpacing:1 }}>
               {loadedSet.size} / {symbols.length} ETFs loaded · {progress}%
             </div>
           </div>
@@ -451,7 +451,7 @@ export default function App() {
                   }}/>
                   <span style={{
                     fontSize:10, letterSpacing:2, textTransform:"uppercase", fontWeight:700,
-                    color: isGroupOn ? groupData.color : "#94a3b8",
+                    color: isGroupOn ? groupData.color : "#475569",
                   }}>{groupName}</span>
                 </button>
 
@@ -481,7 +481,7 @@ export default function App() {
                         <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
                           <span style={{
                             fontSize:11, fontWeight:700,
-                            color: hasError ? "#f87171" : isLoaded ? (isOn ? "#0f172a" : "#94a3b8") : "#cbd5e1",
+                            color: hasError ? "#f87171" : isLoaded ? (isOn ? "#0f172a" : "#475569") : "#64748b",
                           }}>{ticker.symbol}</span>
                           {pct != null && isOn && isLoaded && !hasError && (
                             <span style={{ fontSize:10, fontWeight:700, color: parseFloat(pct)>=0 ? "#16a34a" : "#dc2626" }}>
@@ -490,11 +490,11 @@ export default function App() {
                           )}
                           {isCurrentlyLoading && <span style={{ fontSize:9, color:"#93c5fd" }}>loading…</span>}
                           {!isLoaded && !isCurrentlyLoading && !hasError && (
-                            <span style={{ fontSize:9, color:"#cbd5e1" }}>queued</span>
+                            <span style={{ fontSize:9, color:"#334155" }}>queued</span>
                           )}
                           {hasError && <span style={{ fontSize:9, color:"#f87171" }}>error</span>}
                         </div>
-                        <div style={{ fontSize:9, color: isLoaded ? "#94a3b8" : "#cbd5e1", lineHeight:1.3 }}>
+                        <div style={{ fontSize:9, color: isLoaded ? "#475569" : "#64748b", lineHeight:1.3 }}>
                           {ticker.name}
                         </div>
                       </div>
@@ -536,10 +536,10 @@ export default function App() {
                 <div style={{ color:"#334155", fontSize:12, letterSpacing:1, marginBottom:6 }}>
                   FETCHING LIVE MARKET DATA
                 </div>
-                <div style={{ color:"#94a3b8", fontSize:10, marginBottom:4 }}>
+                <div style={{ color:"#475569", fontSize:10, marginBottom:4 }}>
                   Loading {symbols.length} ETFs one at a time
                 </div>
-                <div style={{ color:"#cbd5e1", fontSize:10 }}>
+                <div style={{ color:"#334155", fontSize:10 }}>
                   Lines will appear in the chart as each ETF loads (~3 min total)
                 </div>
                 {countdown > 0 && (
@@ -552,11 +552,11 @@ export default function App() {
           ) : activeTickers.length === 0 && !isLoading ? (
             <div style={{
               flex:1, display:"flex", alignItems:"center", justifyContent:"center",
-              color:"#cbd5e1", fontSize:12, letterSpacing:2
+              color:"#334155", fontSize:12, letterSpacing:2
             }}>SELECT A GROUP FROM THE SIDEBAR</div>
           ) : (
             <>
-              <div style={{ fontSize:9, color:"#94a3b8", letterSpacing:1.5, marginBottom:10, textAlign:"right" }}>
+              <div style={{ fontSize:9, color:"#475569", letterSpacing:1.5, marginBottom:10, textAlign:"right" }}>
                 INDEXED RETURN · BASE = 100 AT PERIOD START
               </div>
 
@@ -569,12 +569,12 @@ export default function App() {
                     <CartesianGrid strokeDasharray="3 5" stroke="#f1f5f9" vertical={false}/>
                     <XAxis
                       dataKey="date"
-                      tick={{ fill:"#94a3b8", fontSize:9, fontFamily:"IBM Plex Mono,monospace" }}
+                      tick={{ fill:"#475569", fontSize:9, fontFamily:"IBM Plex Mono,monospace" }}
                       tickLine={false} axisLine={{ stroke:"#e2e8f0" }}
                       interval="preserveStartEnd"
                     />
                     <YAxis
-                      tick={{ fill:"#94a3b8", fontSize:9, fontFamily:"IBM Plex Mono,monospace" }}
+                      tick={{ fill:"#475569", fontSize:9, fontFamily:"IBM Plex Mono,monospace" }}
                       tickLine={false} axisLine={false} width={36} domain={["auto","auto"]}
                     />
                     <Tooltip content={<CustomTooltip/>}/>
@@ -616,7 +616,7 @@ export default function App() {
           )}
 
           <p style={{
-            margin:"14px 0 0", fontSize:9, color:"#94a3b8",
+            margin:"14px 0 0", fontSize:9, color:"#475569",
             lineHeight:1.7, borderTop:"1px solid #e2e8f0", paddingTop:10,
           }}>
             ⚠ Data sourced from Alpha Vantage for informational purposes only. Not financial advice.
